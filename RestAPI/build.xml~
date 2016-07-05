@@ -32,7 +32,6 @@
 		<pathelement path="libs/hibernate/oscache-2.1.jar"/>
 		<pathelement path="libs/hibernate/standard.jar"/>
 		<pathelement path="libs/miscss/javax.servlet-api.jar"/>
-
 		<pathelement path="libs/groupz/groupzcoredb.jar"/>
 		<pathelement path="libs/json/commons-beanutils-1.7.jar"/>
 		<pathelement path="libs/json/commons-collections.jar"/>
