@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="all" name="RestAPI">
+	<property environment="env"/>
+	<property name="debuglevel" value="source,lines,vars"/>
+	<property name="target" value="1.5"/>
+	<property name="source" value="1.5"/>
+	<path id="RestAPI.classpath">
+		<pathelement path="libs/mysql/mysql-connector-java-3.0.17-ga-bin.jar"/>
+		<pathelement path="libs/hibernate/antlr-2.7.6.jar"/>
+		<pathelement path="libs/hibernate/antlr-2.7.6.jar"/>
+		<pathelement path="libs/hibernate/asm-attrs.jar"/>
+		<pathelement path="libs/hibernate/c3p0-0.9.1.jar"/>
+		<pathelement path="libs/hibernate/cglib-2.1.3.jar"/>
+		<pathelement path="libs/hibernate/commons-beanutils-1.7.jar"/>
+		<pathelement path="libs/hibernate/commons-collections-2.1.1.jar"/>
+		<pathelement path="libs/hibernate/commons-collections-2.1.jar"/>
+		<pathelement path="libs/hibernate/commons-collections-3.1.jar"/>
+		<pathelement path="libs/hibernate/commons-collections-3.2.jar"/>
+		<pathelement path="libs/hibernate/commons-digester-1.7.jar"/>
+		<pathelement path="libs/hibernate/commons-logging-1.0.2.jar"/>
+		<pathelement path="libs/hibernate/dom4j-1.6.1.jar"/>
+		<pathelement path="libs/hibernate/ehcache-1.2.3.jar"/>
+		<pathelement path="libs/hibernate/ejb3-persistence.jar"/>
+		<pathelement path="libs/hibernate/hibernate3.jar"/>
+		<pathelement path="libs/hibernate/hibernate-annotations.jar"/>
+		<pathelement path="libs/hibernate/hibernate-commons-annotations.jar"/>
+		<pathelement path="libs/hibernate/hibernate-tools.jar"/>
+		<pathelement path="libs/hibernate/hibernate-tools.jar"/>
+		<pathelement path="libs/hibernate/jdbc2_0-stdext.jar"/>
+		<pathelement path="libs/hibernate/jta.jar"/>
+		<pathelement path="libs/hibernate/org-apache-commons-logging.jar"/>
+		<pathelement path="libs/hibernate/oscache-2.1.jar"/>
+		<pathelement path="libs/hibernate/standard.jar"/>
+		<pathelement path="libs/miscss/javax.servlet-api.jar"/>
+		<pathelement path="libs/groupz/groupzcoredb.jar"/>
+		<pathelement path="libs/json/commons-beanutils-1.7.jar"/>
+		<pathelement path="libs/json/commons-collections.jar"/>
+		<pathelement path="libs/json/commons-lang.jar"/>
+		<pathelement path="libs/json/commons-logging-1.1.1.jar"/>
+		<pathelement path="libs/json/ezmorph.jar" />
+		<pathelement path="libs/json/json-lib-2.2.2-jdk15.jar" />
+		<pathelement path="libs/json/json-smart-1.0.8.jar" />
+		<pathelement path="libs/json/xom-1.2.10.jar" />
+
+	</path>
+
+	<target name="init">
+		<mkdir dir="build/web" />
+		<mkdir dir="build/web/WEB-INF/classes" />
+		<mkdir dir="build/web/WEB-INF/classes/META-INF" />
+		<mkdir dir="dist" />
+
+		<copy includeemptydirs="false" todir="build/web/WEB-INF/classes">
+			<fileset dir="src" includes="**/*.properties,**/*.xml" />
+		</copy>
+		<copy includeemptydirs="false" todir="build/web/WEB-INF/classes/META-INF">
+			<fileset dir="src" includes="**/*.xml,**/*.MF"/>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="build/web"/>
+	</target>
+	<target depends="clean" name="cleanall"/>
+	<target depends="init" name="build">
+		<echo message="${ant.project.name}: ${ant.file}"/>
+		<javac target="${target}" debug="true" destdir="build/web/WEB-INF/classes" debuglevel="${debuglevel}" source="${source}" includeAntRuntime="false">
+			<src path="src"/>
+			<classpath refid="RestAPI.classpath"/>
+		</javac>
+
+	</target>
+
+	<target depends="build" name="war">
+		<war destfile="dist/RestAPI.war" webxml="web/WEB-INF/web.xml">
+			<fileset dir="libs"/>
+			<lib dir="libs/hibernate" includes="**/*.jar"/>
+			<lib dir="libs/mysql" includes="**/*.jar"/>
+			<lib dir="libs/groupz" includes="**/*.jar"/>
+			<lib dir="libs/miscss" includes="**/*.jar"/>
+			<lib dir="libs/json" includes="**/*.jar"/>
+			<classes dir="build/web/WEB-INF/classes"/>
+
+			<fileset dir="web"/>
+		</war>
+	</target>
+
+
+	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+	<property name="build.home" value="build"/>
+	<property name="build.classes.home" value="build/web"/>
+
+</project>

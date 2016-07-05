@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>RestAPI</display-name>  
+  <servlet>
+    <description></description>
+    <display-name>UserRegistrationServlet</display-name>
+    <servlet-name>UserRegistrationServlet</servlet-name>
+    <servlet-class>com.user.servlets.UserRegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserRegistrationServlet</servlet-name>
+    <url-pattern>/UserRegistrationServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>SelectGroupzServlet</display-name>
+    <servlet-name>SelectGroupzServlet</servlet-name>
+    <servlet-class>com.user.servlets.SelectGroupzServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectGroupzServlet</servlet-name>
+    <url-pattern>/SelectGroupzServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>UserSelectionServlet</display-name>
+    <servlet-name>UserSelectionServlet</servlet-name>
+    <servlet-class>com.user.servlets.UserSelectionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserSelectionServlet</servlet-name>
+    <url-pattern>/UserSelectionServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>ServiceRequestServlet</display-name>
+    <servlet-name>ServiceRequestServlet</servlet-name>
+    <servlet-class>com.ServiceRequest.servlets.ServiceRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServiceRequestServlet</servlet-name>
+    <url-pattern>/ServiceRequestServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>PostingDataServlet</display-name>
+    <servlet-name>PostingDataServlet</servlet-name>
+    <servlet-class>com.user.servlets.PostingDataServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostingDataServlet</servlet-name>
+    <url-pattern>/PostingDataServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>RetrievalDataServlet</display-name>
+    <servlet-name>RetrievalDataServlet</servlet-name>
+    <servlet-class>com.user.servlets.RetrievalDataServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RetrievalDataServlet</servlet-name>
+    <url-pattern>/RetrievalDataServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>UnitTestServlet</display-name>
+    <servlet-name>UnitTestServlet</servlet-name>
+    <servlet-class>com.test.servlets.UnitTestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UnitTestServlet</servlet-name>
+    <url-pattern>/UnitTestServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>GroupzLogo</display-name>
+    <servlet-name>GroupzLogo</servlet-name>
+    <servlet-class>com.resource.servlets.GroupzLogo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GroupzLogo</servlet-name>
+    <url-pattern>/GroupzLogo/*</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>ProfilePhoto</display-name>
+    <servlet-name>ProfilePhoto</servlet-name>
+    <servlet-class>com.resource.servlets.ProfilePhoto</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfilePhoto</servlet-name>
+    <url-pattern>/ProfilePhoto/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>NetworkAccounts</display-name>
+    <servlet-name>NetworkAccounts</servlet-name>
+    <servlet-class>com.user.servlets.NetworkAccounts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NetworkAccounts</servlet-name>
+    <url-pattern>/NetworkAccounts</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>GroupzCreation</display-name>
+    <servlet-name>GroupzCreation</servlet-name>
+    <servlet-class>com.user.servlets.GroupzCreation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GroupzCreation</servlet-name>
+    <url-pattern>/GroupzCreation</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>Authentication</display-name>
+    <servlet-name>Authentication</servlet-name>
+    <servlet-class>com.user.servlets.Authentication</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Authentication</servlet-name>
+    <url-pattern>/Authentication</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>GCMUpdate</display-name>
+    <servlet-name>GCMUpdate</servlet-name>
+    <servlet-class>com.user.servlets.GCMUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GCMUpdate</servlet-name>
+    <url-pattern>/GCMUpdate</url-pattern>
+  </servlet-mapping>
+ 
+</web-app>
